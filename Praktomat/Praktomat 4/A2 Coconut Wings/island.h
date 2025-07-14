@@ -8,8 +8,6 @@ typedef struct island
     char closingTime[6];
 }Island;
 
-typedef struct node Node;
-
 void initializeIslands(Island *island);
 Node *initializeTours(int *tour, int numIslands, Island *island);
 Node *createTour(int tourNum, Island *island);
