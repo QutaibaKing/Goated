@@ -44,7 +44,7 @@ int main(void)
     if (file == NULL) 
     {
         printf("ERROR: File could not be found!\n");
-        return EXIT_FAILURE; 
+    }
 
     Track_Search(file, search);
     fclose(file);
