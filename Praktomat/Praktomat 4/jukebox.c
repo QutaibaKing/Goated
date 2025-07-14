@@ -12,7 +12,7 @@ void Track_Search(FILE *file, const char *search)
     {
         if (strstr(line, search))
         {
-            printf("Treffer in Zeile %d: %s", lineNum, line);
+            printf("Track %d: %s", lineNum, line);
             found = 1;
         }
         lineNum++;
@@ -20,32 +20,31 @@ void Track_Search(FILE *file, const char *search)
 
     if (!found)
     {
-        printf("Suchwort nicht gefunden");
+        printf("Search word not found!");
     }
 }
 
 int main(void)
 {
     char fileName[50];
-    char search[100]; // war vorher char *search[100]; → falsch
+    char search[100]; 
 
     FILE *file;
 
     printf("Please enter a Jukebox file name: ");
     fgets(fileName, sizeof(fileName), stdin);
-    fileName[strcspn(fileName, "\n")] = 0; // Zeilenumbruch entfernen
+    fileName[strcspn(fileName, "\n")] = 0; 
 
     printf("Please enter search word: ");
     fgets(search, sizeof(search), stdin);
-    search[strcspn(search, "\n")] = 0; // Zeilenumbruch entfernen
+    search[strcspn(search, "\n")] = 0; 
 
     file = fopen(fileName, "r");
 
-    if (file == NULL) // war = statt ==
+    if (file == NULL) 
     {
-        printf("Fehler: Datei konnte nicht geöffnet werden\n");
-        return EXIT_FAILURE; // vorher war: return;
-    }
+        printf("ERROR: File could not be found!\n");
+        return EXIT_FAILURE; 
 
     Track_Search(file, search);
     fclose(file);
