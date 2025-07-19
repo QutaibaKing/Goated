@@ -1,6 +1,9 @@
 #ifndef Island_H_
 #define Island_H_
 
+// Forward declaration:
+typedef struct node Node;
+
 typedef struct island
 {
     char islandName[30];
@@ -11,6 +14,6 @@ typedef struct island
 void initializeIslands(Island *island);
 Node *initializeTours(int *tour, int numIslands, Island *island);
 Node *createTour(int tourNum, Island *island);
-void printTour(Node *begin);
+void printTour(Node *begin, int tourNum);
 
 #endif
