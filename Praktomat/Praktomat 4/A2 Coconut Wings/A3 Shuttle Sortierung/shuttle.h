@@ -1,8 +1,8 @@
-
 #ifndef SHUTTLE_H_
 #define SHUTTLE_H_
 
-typedef struct Shuttle {
+typedef struct Shuttle
+{
     unsigned char missionNum;
     char date[15];
     char missionName[20];
@@ -10,9 +10,9 @@ typedef struct Shuttle {
     char launch_pad[20];
     struct Shuttle* next;
     struct Shuttle* prev;
-} Shuttle;
+}Shuttle;
 
-Shuttle *create_shuttle_node(int missionNum, char *date, char *missionName, char *orbiter, char *launch_pad);
+Shuttle *create_shuttle_node(int missionNum, char *date, char *missionName, char *orbitor, char *launch_pad);
 void trim(char* str);
 Shuttle *parseLineToShuttle(char* line);
 Shuttle *readShuttleFile(const char* filename);
@@ -20,4 +20,8 @@ Shuttle* Insertion_Sort(Shuttle* begin, Shuttle* newNode);
 void printShuttleList(Shuttle* begin); 
 void freeShuttleList(Shuttle* begin);
 
+
 #endif
+
+
+

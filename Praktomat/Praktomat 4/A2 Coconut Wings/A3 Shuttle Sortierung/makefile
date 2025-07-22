@@ -1,4 +1,3 @@
-
 run_main: build ./build/shuttle_sort
 	./build/shuttle_sort
 
@@ -16,3 +15,4 @@ build:
 
 clean:
 	rm -rf build
+
